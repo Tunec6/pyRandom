@@ -1,0 +1,51 @@
+from random import *
+
+print('Добро пожаловать в числовую угадайку')
+print('Введите число от 1 до 100.')
+
+x = randint(1, 100)
+print(x)
+
+
+def is_valid(num):
+    if num.isdigit() and 1 <= int(num) <= 100:
+        return True
+    return False
+
+    
+
+
+def is_game():
+    attempt = 0
+    while True:
+        num = input()
+        attempt += 1
+
+        if is_valid(num) is False:
+            print('А может быть все-таки введем целое число от 1 до 100?')
+        else:
+            num = int(num)
+            if num > x:
+                print('Ваше число больше загаданного, попробуйте еще разок')
+            elif num < x:
+                print("Ваше число меньше загаданного, попробуйте еще разок")
+            else:
+                print('Молодец ты угадал число!!')
+                print(f'Ты угадал за {attempt} попыток.')
+                print('Спасибо, что играли в числовую угадайку. Еще увидимся...')
+                break
+is_game()
+
+
+
+while True:
+    print('Хочешь продолжить игру? Да/Нет')
+    answer = input()
+    if answer == 'Да':
+        print('Введите число от 1 до 100.')
+        is_game()
+    elif answer == 'Нет':
+        print('Спасибо, что играли в числовую угадайку. Еще увидимся...')
+        break
+    else:
+        print('Введите Да или Нет')
