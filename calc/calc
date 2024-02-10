@@ -1,0 +1,46 @@
+def excetion(a, b):
+    if a.isdigit() and b.isdigit():
+        return True
+    return False
+
+def calc():
+
+    while True:
+        a = input('Введите первое число: ')     
+        if a.isdigit() is False:
+            print('Введенно не число!')
+            calc()      
+        common = input('Введите действие: ')
+        b = input('Введите второе число: ')
+                
+        if excetion(a ,b) is False:
+            print('Введено не число!')
+        else:
+            a = int(a)
+            b = int(b)
+                    
+            if common == '+':
+                print(a, '+', b, '=' ,a + b)
+                break
+            elif common == '-':
+                print(a, '-', b, '=' ,a - b)
+                break
+            elif common == '*':
+                print(a, '*', b, '=' ,a * b)
+                break
+            elif common == '/':
+                print(a, '/', b, '=' , a / b)
+                break
+    
+
+
+
+calc()
+
+while True:
+     answer = input('Продолжить вычисление? Да/Нет ')
+     
+     if answer == 'Да':
+         calc()
+     elif answer == 'Нет':
+         break    
