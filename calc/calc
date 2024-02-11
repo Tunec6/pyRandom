@@ -3,6 +3,7 @@ def excetion(a, b):
         return True
     return False
 
+
 def calc():
 
     while True:
@@ -34,13 +35,12 @@ def calc():
     
 
 
-
 calc()
 
 while True:
-     answer = input('Продолжить вычисление? Да/Нет ')
-     
-     if answer == 'Да':
-         calc()
-     elif answer == 'Нет':
-         break    
+    answer = input('Продолжить вычисление? Да/Нет ')
+        
+    if answer == 'Да':
+        calc()
+    elif answer == 'Нет':
+        break    
