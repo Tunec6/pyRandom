@@ -1,15 +1,10 @@
 from random import *
 name = input('Введите Имя: ')
 a = int(input('Введите интервал: '))
-print('Добро пожаловать в числовую угадайку')
-print(f'Введите число от 1 до {a}.')
-
-x = randint(1, a)
-print(x)
 
 
 def is_valid(num):
-    if num.isdigit() and 1 <= int(num) <= 100:
+    if num.isdigit() and 1 <= int(num) <= {a}:
         return True
     return False
 
@@ -17,6 +12,12 @@ def is_valid(num):
 
 
 def is_game():
+    print('Добро пожаловать в числовую угадайку')
+    print(f'Введите число от 1 до {a}.')
+
+    x = randint(1, a)
+    print(x)
+
     attempt = 0
     while True:
         num = input()
@@ -33,13 +34,15 @@ def is_game():
             elif num < x:
                 print(f"{name} ваше число меньше загаданного, попробуйте еще разок")
             else:
-                f = open('score.txt', 'w')
-                f.write(f'{name} угадал за {attempt} попыток.')
+                f = open('score.txt', 'a')
+                f.write(f'{name} угадал за {attempt} попыток. \n')
                 print('Молодец ты угадал число!!')
                 print(f'{name} угадал за {attempt} попыток.')
                 print('Спасибо, что играли в числовую угадайку. Еще увидимся...')
                 break
 is_game()
+
+
 
 
 
